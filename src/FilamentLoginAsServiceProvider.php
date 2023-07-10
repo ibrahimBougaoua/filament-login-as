@@ -2,9 +2,9 @@
 
 namespace IbrahimBougaoua\FilamentLoginAs;
 
+use IbrahimBougaoua\FilamentLoginAs\Commands\FilamentLoginAsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use IbrahimBougaoua\FilamentLoginAs\Commands\FilamentLoginAsCommand;
 
 class FilamentLoginAsServiceProvider extends PackageServiceProvider
 {
