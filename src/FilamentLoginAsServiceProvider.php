@@ -3,17 +3,16 @@
 namespace IbrahimBougaoua\FilamentLoginAs;
 
 use Filament\Facades\Filament;
-use IbrahimBougaoua\FilamentLoginAs\Commands\FilamentLoginAsCommand;
-use IbrahimBougaoua\FilamentLoginAs\FilamentLoginAs;
-use Spatie\LaravelPackageTools\Package;
 use Filament\PluginServiceProvider;
+use IbrahimBougaoua\FilamentLoginAs\Commands\FilamentLoginAsCommand;
+use Spatie\LaravelPackageTools\Package;
 
 class FilamentLoginAsServiceProvider extends PluginServiceProvider
 {
     public function packageBooted(): void
     {
         parent::packageBooted();
-        
+
         Filament::serving(fn () => FilamentLoginAs::callLoginAsComponent());
     }
 

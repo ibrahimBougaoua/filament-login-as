@@ -1,19 +1,11 @@
-# This is my package filament-login-as
+# Filament login as
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ibrahimbougaoua/filament-login-as.svg?style=flat-square)](https://packagist.org/packages/ibrahimbougaoua/filament-login-as)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ibrahimbougaoua/filament-login-as/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ibrahimbougaoua/filament-login-as/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ibrahimbougaoua/filament-login-as/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ibrahimbougaoua/filament-login-as/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ibrahimbougaoua/filament-login-as.svg?style=flat-square)](https://packagist.org/packages/ibrahimbougaoua/filament-login-as)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/filament-login-as.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/filament-login-as)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+A Laravel package for login as another user provides functionality that allows authorized users, typically administrators or superusers, to temporarily authenticate themselves as a different user within a Laravel application. This feature is useful for troubleshooting issues, testing user-specific functionality, or providing support by experiencing the application from the user's perspective.
 
 ## Installation
 
@@ -52,8 +44,9 @@ php artisan vendor:publish --tag="filament-login-as-views"
 ## Usage
 
 ```php
-$filamentLoginAs = new IbrahimBougaoua\FilamentLoginAs();
-echo $filamentLoginAs->echoPhrase('Hello, IbrahimBougaoua!');
+->actions([
+	LoginAsAction::make(),
+])
 ```
 
 ## Testing
@@ -61,10 +54,6 @@ echo $filamentLoginAs->echoPhrase('Hello, IbrahimBougaoua!');
 ```bash
 composer test
 ```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 

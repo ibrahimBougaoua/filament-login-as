@@ -2,25 +2,29 @@
 
 namespace IbrahimBougaoua\FilamentLoginAs\Http\Livewire;
 
-use App\Models\User;
-use Auth;
+use IbrahimBougaoua\FilamentLoginAs\Traits\LoginAs;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
-use Redirect;
-use Session;
 
 class LoginAsLeave extends Component
 {
-    protected $listeners = ['impersonate-leave' => 'leave'];
- 
-    public function leave()
+    public $leave = false;
+
+    protected $listeners = ['login-as-logout' => 'logout'];
+
+    public function mount()
     {
-        dd(2023);
+        $this->leave = LoginAs::isLogged();
+    }
+
+    public function logout()
+    {
+        LoginAs::logout();
     }
 
     public function render(): View
     {
         return view('filament-login-as::login-as')
-        ->layout('filament::components.layouts.base');
+            ->layout('filament::components.layouts.base');
     }
 }
