@@ -2,9 +2,9 @@
 
 namespace IbrahimBougaoua\FilamentLoginAs\Tests;
 
+use IbrahimBougaoua\FilamentLoginAs\FilamentLoginAsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use IbrahimBougaoua\FilamentLoginAs\FilamentLoginAsServiceProvider;
 
 class TestCase extends Orchestra
 {
