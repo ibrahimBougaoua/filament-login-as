@@ -2,12 +2,21 @@
 
 namespace IbrahimBougaoua\FilamentLoginAs;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Filament\Facades\Filament;
 use IbrahimBougaoua\FilamentLoginAs\Commands\FilamentLoginAsCommand;
+use IbrahimBougaoua\FilamentLoginAs\FilamentLoginAs;
+use Spatie\LaravelPackageTools\Package;
+use Filament\PluginServiceProvider;
 
-class FilamentLoginAsServiceProvider extends PackageServiceProvider
+class FilamentLoginAsServiceProvider extends PluginServiceProvider
 {
+    public function packageBooted(): void
+    {
+        parent::packageBooted();
+        
+        Filament::serving(fn () => FilamentLoginAs::callLoginAsComponent());
+    }
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -19,7 +28,7 @@ class FilamentLoginAsServiceProvider extends PackageServiceProvider
             ->name('filament-login-as')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_filament-login-as_table')
+            ->hasMigration('create_filament_login_as_table')
             ->hasCommand(FilamentLoginAsCommand::class);
     }
 }
